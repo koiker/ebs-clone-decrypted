@@ -1,0 +1,3 @@
+[console_scripts]
+decrypt_ebs = ebs_clone_decrypted.cli:main
+

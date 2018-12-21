@@ -245,7 +245,7 @@ class CloneEbsDecrypted:
         source_device = self.detach_volume(self.source_volume_id, self.source_instance_id)
 
         # Attach source EBS to AUX Instance
-        self.attach_volume(self.source_volume_id, self.local_instance_id, self.aux_source_device)
+        self.attach_volume(self.source_volume_id, local_instance_id, self.aux_source_device)
 
         # Create new reduced EBS volume
         new_volume_id = self.create_volume_from_existing_volume(volume_id=self.source_volume_id)

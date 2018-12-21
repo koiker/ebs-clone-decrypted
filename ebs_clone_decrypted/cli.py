@@ -177,7 +177,6 @@ class CloneEbsDecrypted:
         return local_new_tags
 
     # Prepare and Copy source volume
-    @staticmethod
     def prepare_and_copy_volume(self, source_device, target_device):
         output = None
 

@@ -110,7 +110,7 @@ class CloneEbsDecrypted:
                 attach_volume_id, attach_instance_id, attach_device))
 
     # Create EBS From Volume or Snapshot
-    def create_volume_from_existing_volume(self, volume_id, new_size, snapshot_id=None):
+    def create_volume_from_existing_volume(self, volume_id, new_size=None, snapshot_id=None):
         source_volume = self.ec2_resource.Volume(volume_id)
 
         if new_size is None:
@@ -122,9 +122,9 @@ class CloneEbsDecrypted:
 
         new_volume_dict = {
             'AvailabilityZone': source_volume.availability_zone,
-            'Encrypted': source_volume.encrypted,
+            'Encrypted': None,
             'Iops': source_volume.iops,
-            'KmsKeyId': source_volume.kms_key_id,
+            'KmsKeyId': None,
             'Size': new_size,
             'VolumeType': source_volume.volume_type,
             'TagSpecifications': [{'ResourceType': 'volume', 'Tags': self.create_tag_specifications(volume_id)}]

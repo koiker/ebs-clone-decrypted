@@ -10,7 +10,7 @@ setup(
     author_email='unknown',
     description='Script to convert an encrypted EBS to unencrypted',
     install_requires=[
-        'boto3>=1.7.6',
+        'boto3>=1.9',
         'click>=6.7'],
     entry_points={
         'console_scripts': [

@@ -183,7 +183,7 @@ class CloneEbsDecrypted:
         # Copy the volume (clone partitions)
         try:
             print("Start to copy device %s to %s ..." % (source_device, target_device))
-            output = subprocess.check_output(["sudo", "dd", "bs=128M", "if=" + source_device, "of=" + target_device,
+            output = subprocess.check_output(["sudo", "dd", "bs=16M", "if=" + source_device, "of=" + target_device,
                                               "status=progress", "oflag=direct"])
             print(output)
             output = subprocess.check_output(["sync"])

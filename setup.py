@@ -11,7 +11,6 @@ setup(
     description='Script to convert an encrypted EBS to unencrypted',
     install_requires=[
         'boto3>=1.7.6',
-        'botocore>=1.12.72',
         'click>=6.7'],
     entry_points={
         'console_scripts': [
